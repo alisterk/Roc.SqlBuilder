@@ -9,18 +9,17 @@ namespace Roc.TEST
 {
     public class SqlserverTest
     {
-        public static void TEST()
+        public void TEST()
         {
             Common com = new Common(SqlAdapter.SqlServer2005);
 
-            var sql = com.GetSqlLamUpdate();
+            var sql = com.GetSqlLamWhere();
 
             string sqlText = sql.SqlString;
             string parameterString = com.GetParameterString(sql.Parameters);
 
             Console.WriteLine("SQL Text: " + sqlText);
             Console.WriteLine("Parameter Text: " + parameterString);
-            //Console.WriteLine("Split: " + sql.SplitColumns[0]);
 
             Console.Read();
         }

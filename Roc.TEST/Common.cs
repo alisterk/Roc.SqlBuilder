@@ -40,12 +40,10 @@ namespace Roc.TEST
         {
             Users u = new Users();
             u.Sex = 2;
-            //u.Key = Guid.NewGuid();
             var sql = new SqlLam<Users>(adapter).Where(m => m.Money > 2000);
 
             string sqlText = sql.QueryPage(10, 1);
             var list = DBHelper.Query<Users>(sqlText, sql.Parameters);
-            //int count = DBHelper.Excute(sql.SqlString, sql.Parameters);
             return sql;
         }
 
@@ -57,7 +55,6 @@ namespace Roc.TEST
         {
             Users u = new Users();
             u.Sex = 2;
-            //u.Key = Guid.NewGuid();
             var sql = new SqlLam<Users>(adapter).Delete(m => m.Id == 0);
             int count = DBHelper.Excute(sql.SqlString, sql.Parameters);
             return sql;
@@ -71,7 +68,6 @@ namespace Roc.TEST
         {
             Users u = new Users();
             u.Sex = 3;
-            //u.Key = Guid.NewGuid();
             var sql = new SqlLam<Users>(adapter).Update(new { Sex = u.Sex, Key = "abcdefg", Name = "李四" }).Where(m => m.Id == 2);
             int count = DBHelper.Excute(sql.SqlString, sql.Parameters);
             return sql;
@@ -85,7 +81,6 @@ namespace Roc.TEST
         {
             Users u = new Users();
             u.Sex = 2;
-            //u.Key = Guid.NewGuid();
             var sql = new SqlLam<Users>(adapter).Update(u).UseEntityProperty(false).Where(m => m.Name == "李四");
             return sql;
         }
@@ -98,7 +93,6 @@ namespace Roc.TEST
         {
             Users u = new Users();
             u.Sex = 2;
-            //u.Key = Guid.NewGuid();
             var sql = new SqlLam<Users>(adapter).Insert(new { Sex = u.Sex, Id = 100 }, true);
             return sql;
         }
@@ -112,7 +106,6 @@ namespace Roc.TEST
             Users u = new Users();
             u.Id = 1;
             u.Sex = 2;
-            //u.Key = Guid.Empty;
             u.Money = 100;
             u.Name = "chengpeng";
             u.DeleteFlag = 0;
@@ -121,7 +114,6 @@ namespace Roc.TEST
             var sql = new SqlLam<Users>(adapter).Insert(u, false);
 
             int count = DBHelper.Excute(sql.SqlString, sql.Parameters);
-            //int id = DBHelper.Get<int>(sql.SqlString, sql.Parameters);
 
             return sql;
         }
@@ -149,7 +141,6 @@ namespace Roc.TEST
             var sql = new SqlLam<Users>(adapter).Insert(new Users(), false);
 
             int count = DBHelper.Excute(sql.SqlString, users);
-            //int id = DBHelper.Get<int>(sql.SqlString, sql.Parameters);
 
             return sql;
         }
@@ -262,6 +253,7 @@ namespace Roc.TEST
         {
             Guid g = Guid.NewGuid();
             SqlLam<Users> sql = new SqlLam<Users>(adapter).Where(m => m.Id > 100).Select(m => m.Id, m => m.Name);
+
             return sql;
         }
     }

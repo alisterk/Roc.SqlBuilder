@@ -12,7 +12,10 @@ namespace Roc.TEST
             //OracleTest test = new OracleTest();
             //test.TEST();
 
-            MySqlTest test = new MySqlTest();
+            //MySqlTest test = new MySqlTest();
+            //test.TEST();
+
+            SqlserverTest test = new SqlserverTest();
             test.TEST();
         }
     }
