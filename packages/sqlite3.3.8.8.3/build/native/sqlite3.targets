@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" InitialTargets="sqlite3_init">
+  <PropertyGroup Label="Default initializers for properties">
+    <Linkage-sqlite3 Condition="'$(Linkage-sqlite3)' == ''">dynamic</Linkage-sqlite3>
+    <CallingConvention-sqlite3 Condition="'$(CallingConvention-sqlite3)' == ''">cdecl</CallingConvention-sqlite3>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../..//build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../..//build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Win32 and v120 and Release" Condition="'$(Platform.ToLower())' == 'win32' And ( $(PlatformToolset.ToLower().IndexOf('v120')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And ( $(Configuration.ToLower().IndexOf('debug')) == -1 )">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/Win32\v120\Release\sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Win32 and v120 and Debug" Condition="'$(Platform.ToLower())' == 'win32' And ( $(PlatformToolset.ToLower().IndexOf('v120')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 )">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/Win32\v120\Debug\sqlite3d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="x64 and v120 and Release" Condition="'$(Platform.ToLower())' == 'x64' And ( $(PlatformToolset.ToLower().IndexOf('v120')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And ( $(Configuration.ToLower().IndexOf('debug')) == -1 )">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v120\Release\sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="x64 and v120 and Debug" Condition="'$(Platform.ToLower())' == 'x64' And ( $(PlatformToolset.ToLower().IndexOf('v120')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 )">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\v120\Debug\sqlite3d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\default-propertiesui.xml" />
+  </ItemGroup>
+  <UsingTask TaskName="sqlite3_Contains" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll" TaskFactory="CodeTaskFactory">
+    <ParameterGroup>
+      <Text Output="false" ParameterType="System.String" />
+      <Library Output="false" Required="true" ParameterType="System.String" />
+      <Value Output="false" Required="true" ParameterType="System.String" />
+      <Result Output="true" ParameterType="System.String" />
+    </ParameterGroup>
+    <Task>
+      <Code>Result = ((Text ?? "").Split(';').Contains(Library) ) ? Value : String.Empty;</Code>
+    </Task>
+  </UsingTask>
+  <Target Name="sqlite3_init">
+    <sqlite3_Contains Text="Linkage-dynamic" Library="sqlite3" Value="dynamic" Condition="'$(Linkage-sqlite3)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-sqlite3" />
+    </sqlite3_Contains>
+    <sqlite3_Contains Text="Linkage-static" Library="sqlite3" Value="static" Condition="'$(Linkage-sqlite3)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-sqlite3" />
+    </sqlite3_Contains>
+    <sqlite3_Contains Text="Linkage-ltcg" Library="sqlite3" Value="ltcg" Condition="'$(Linkage-sqlite3)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-sqlite3" />
+    </sqlite3_Contains>
+    <sqlite3_Contains Text="Linkage-sxs" Library="sqlite3" Value="sxs" Condition="'$(Linkage-sqlite3)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-sqlite3" />
+    </sqlite3_Contains>
+    <sqlite3_Contains Text="CallingConvention-cdecl" Library="sqlite3" Value="cdecl" Condition="'$(CallingConvention-sqlite3)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-sqlite3" />
+    </sqlite3_Contains>
+    <sqlite3_Contains Text="CallingConvention-stdcall" Library="sqlite3" Value="stdcall" Condition="'$(CallingConvention-sqlite3)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-sqlite3" />
+    </sqlite3_Contains>
+    <sqlite3_Contains Text="CallingConvention-fastcall" Library="sqlite3" Value="fastcall" Condition="'$(CallingConvention-sqlite3)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-sqlite3" />
+    </sqlite3_Contains>
+    <sqlite3_Contains Text="CallingConvention-thiscall" Library="sqlite3" Value="thiscall" Condition="'$(CallingConvention-sqlite3)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-sqlite3" />
+    </sqlite3_Contains>
+    <sqlite3_Contains Text="CallingConvention-clrcall" Library="sqlite3" Value="clrcall" Condition="'$(CallingConvention-sqlite3)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-sqlite3" />
+    </sqlite3_Contains>
+  </Target>
+</Project>

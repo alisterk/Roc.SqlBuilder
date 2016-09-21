@@ -1,0 +1,5 @@
+C:\AAAAAAA\开源框架\Roc.Framework\Roc.SqlBuilder\bin\Debug\Roc.SqlBuilder.dll
+C:\AAAAAAA\开源框架\Roc.Framework\Roc.SqlBuilder\bin\Debug\Roc.SqlBuilder.pdb
+C:\AAAAAAA\开源框架\Roc.Framework\Roc.SqlBuilder\obj\Debug\Roc.SqlBuilder.dll
+C:\AAAAAAA\开源框架\Roc.Framework\Roc.SqlBuilder\obj\Debug\Roc.SqlBuilder.pdb
+C:\AAAAAAA\开源框架\Roc.Framework\Roc.SqlBuilder\obj\Debug\Roc.SqlBuilder.csprojResolveAssemblyReference.cache

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roc.SqlBuilder", "Roc.SqlBuilder\Roc.SqlBuilder.csproj", "{977EB8EC-E793-45BD-81D0-AD44E43D769E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roc.TEST", "Roc.TEST\Roc.TEST.csproj", "{7A80170B-58A9-4208-AD5A-551398234D49}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{87C6C1C7-66F3-4F6E-943E-C5ADB2333013}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{977EB8EC-E793-45BD-81D0-AD44E43D769E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{977EB8EC-E793-45BD-81D0-AD44E43D769E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{977EB8EC-E793-45BD-81D0-AD44E43D769E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{977EB8EC-E793-45BD-81D0-AD44E43D769E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A80170B-58A9-4208-AD5A-551398234D49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A80170B-58A9-4208-AD5A-551398234D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A80170B-58A9-4208-AD5A-551398234D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A80170B-58A9-4208-AD5A-551398234D49}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
