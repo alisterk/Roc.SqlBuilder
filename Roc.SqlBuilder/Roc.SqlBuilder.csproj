@@ -43,9 +43,11 @@
     <Compile Include="Adapter\ISqlAdapter.cs" />
     <Compile Include="Adapter\MySql\MySqlAdapter.cs" />
     <Compile Include="Adapter\Oracle\OracleAdapter.cs" />
+    <Compile Include="Adapter\Postgres\PostgresAdapter.cs" />
     <Compile Include="Adapter\SqlAdapter.cs" />
     <Compile Include="Adapter\Sqlite\Sqlite3Adapter.cs" />
     <Compile Include="Adapter\Sqlserver\SqlserverAdapter.cs" />
+    <Compile Include="Adapter\SyBase\SqlAnyWhereAdapter.cs" />
     <Compile Include="Attributes\ColumnAttribute.cs" />
     <Compile Include="Attributes\KeyAttribute.cs" />
     <Compile Include="Attributes\TableAttribute.cs" />
@@ -54,6 +56,7 @@
     <Compile Include="Builder\BuilderField.cs" />
     <Compile Include="Builder\BuilderOther.cs" />
     <Compile Include="Entity\SqlColumnEntity.cs" />
+    <Compile Include="Extentions\DbConnectionExt.cs" />
     <Compile Include="Resolver\ExpressionTree\LikeMethod.cs" />
     <Compile Include="Resolver\ExpressionTree\SelectFunction.cs" />
     <Compile Include="Entity\SqlConst.cs" />

@@ -102,7 +102,13 @@ namespace Roc.SqlBuilder.Resolver
 
         public void SelectWithFunction<T>(Expression<Func<T, object>> expression, SelectFunction selectFunction, string aliasName)
         {
-            var fieldName = GetColumnName(GetMemberExpression(expression.Body));
+            var fieldName = "*";
+
+            if (expression != null)
+            {
+                fieldName = GetColumnName(GetMemberExpression(expression.Body));
+            }
+           
             _builder.Select(GetTableName<T>(), fieldName, selectFunction, aliasName);
         }
 

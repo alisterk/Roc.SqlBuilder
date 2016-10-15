@@ -79,6 +79,7 @@
     <Compile Include="Common.cs" />
     <Compile Include="Dapper\DBHelper.cs" />
     <Compile Include="Entity\Departments.cs" />
+    <Compile Include="Entity\Tbn.cs" />
     <Compile Include="Entity\Users.cs" />
     <Compile Include="MySqlTest.cs" />
     <Compile Include="OracleTest.cs" />

@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roc.SqlBuilder", "Roc.SqlBuilder\Roc.SqlBuilder.csproj", "{977EB8EC-E793-45BD-81D0-AD44E43D769E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roc.TEST", "Roc.TEST\Roc.TEST.csproj", "{7A80170B-58A9-4208-AD5A-551398234D49}"
@@ -9,6 +11,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{87C6C1
 	ProjectSection(SolutionItems) = preProject
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{8C0E7A03-A167-400F-AB0D-89B8532448ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testdemo", "testdemo\testdemo.csproj", "{946E6FE0-AB69-4E63-A105-2F1216D2CFA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dapper.Lambda", "Dapper.Lambda\Dapper.Lambda.csproj", "{80CF32A7-32BF-4C56-944E-5350AFF808DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,8 +32,19 @@ Global
 		{7A80170B-58A9-4208-AD5A-551398234D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A80170B-58A9-4208-AD5A-551398234D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A80170B-58A9-4208-AD5A-551398234D49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{946E6FE0-AB69-4E63-A105-2F1216D2CFA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{946E6FE0-AB69-4E63-A105-2F1216D2CFA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{946E6FE0-AB69-4E63-A105-2F1216D2CFA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{946E6FE0-AB69-4E63-A105-2F1216D2CFA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80CF32A7-32BF-4C56-944E-5350AFF808DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80CF32A7-32BF-4C56-944E-5350AFF808DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80CF32A7-32BF-4C56-944E-5350AFF808DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80CF32A7-32BF-4C56-944E-5350AFF808DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{946E6FE0-AB69-4E63-A105-2F1216D2CFA8} = {8C0E7A03-A167-400F-AB0D-89B8532448ED}
 	EndGlobalSection
 EndGlobal

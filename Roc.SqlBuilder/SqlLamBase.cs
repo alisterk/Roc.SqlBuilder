@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using Roc.SqlBuilder;
@@ -84,9 +85,20 @@ namespace Roc.SqlBuilder
                     return new OracleAdapter();
                 case SqlAdapter.MySql:
                     return new MySqlAdapter();
+                case SqlAdapter.Postgres:
+                    return new PostgresAdapter();
+                case SqlAdapter.SqlAnyWhere:
+                    return new SqlAnyWhereAdapter();
                 default:
                     throw new ArgumentException("The specified Sql Adapter was not recognized");
             }
         }
+
+        //public static SqlAdapter GetAdapterByDb(IDbConnection dbconnection)
+        //{
+        //    SqlAdapter adapter = SqlAdapter.SqlServer2005;
+
+
+        //}
     }
 }

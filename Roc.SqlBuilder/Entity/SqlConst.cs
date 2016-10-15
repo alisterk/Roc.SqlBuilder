@@ -7,8 +7,8 @@ namespace Roc.SqlBuilder
 {
     internal class SqlConst
     {
-        public static string[] LeftTokens = new string[] { "[", "`", "\"" };
-        public static string[] RightTokens = new string[] { "]", "`", "\"" };
+        public static string[] LeftTokens = new string[] { "[", "`", "\"","" };
+        public static string[] RightTokens = new string[] { "]", "`", "\"" ,""};
         public static string[] ParamPrefixs = new string[] { "@", ":", "?", "$" };
 
         public static string QuerySQLFormatString = @"SELECT {0} FROM {1} {2} {3} {4} {5}";

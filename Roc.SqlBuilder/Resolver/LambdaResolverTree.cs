@@ -35,13 +35,13 @@ namespace Roc.SqlBuilder.Resolver
                 switch (node.Method)
                 {
                     case LikeMethod.StartsWith:
-                        value = node.Value + "%";
+                        value = node.Value + _builder.Adapter.LikeChars();
                         break;
                     case LikeMethod.EndsWith:
-                        value = "%" + node.Value;
+                        value = _builder.Adapter.LikeChars()+ node.Value;
                         break;
                     case LikeMethod.Contains:
-                        value = "%" + node.Value + "%";
+                        value = _builder.Adapter.LikeChars() + node.Value + _builder.Adapter.LikeChars();
                         break;
                 }
                 _builder.AddLikeCondition(node.MemberNode.TableName, node.MemberNode.FieldName, value);

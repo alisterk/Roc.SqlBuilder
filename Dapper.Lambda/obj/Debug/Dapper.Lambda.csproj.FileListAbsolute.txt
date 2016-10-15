@@ -1,0 +1,9 @@
+D:\WorkRoot\Open\github\Roc.SqlBuilder\Dapper.Lambda\bin\Debug\Dapper.Lambda.dll
+D:\WorkRoot\Open\github\Roc.SqlBuilder\Dapper.Lambda\bin\Debug\Dapper.Lambda.pdb
+D:\WorkRoot\Open\github\Roc.SqlBuilder\Dapper.Lambda\bin\Debug\Dapper.dll
+D:\WorkRoot\Open\github\Roc.SqlBuilder\Dapper.Lambda\bin\Debug\Roc.SqlBuilder.dll
+D:\WorkRoot\Open\github\Roc.SqlBuilder\Dapper.Lambda\bin\Debug\Roc.SqlBuilder.pdb
+D:\WorkRoot\Open\github\Roc.SqlBuilder\Dapper.Lambda\bin\Debug\Dapper.xml
+D:\WorkRoot\Open\github\Roc.SqlBuilder\Dapper.Lambda\obj\Debug\Dapper.Lambda.csprojResolveAssemblyReference.cache
+D:\WorkRoot\Open\github\Roc.SqlBuilder\Dapper.Lambda\obj\Debug\Dapper.Lambda.dll
+D:\WorkRoot\Open\github\Roc.SqlBuilder\Dapper.Lambda\obj\Debug\Dapper.Lambda.pdb

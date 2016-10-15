@@ -42,7 +42,13 @@ namespace Roc.SqlBuilder
         {
             string name = string.IsNullOrEmpty(aliasName) ? fieldName : aliasName;
             name = _adapter.Field(name);
-            var selectionString = string.Format("{0}({1}) AS {2}", selectFunction.ToString(), _adapter.Field(tableName, fieldName), name);
+
+            var fname = fieldName;
+            if (fieldName != "*")
+            {
+                fname = _adapter.Field(tableName, fieldName);
+            }
+            var selectionString = string.Format("{0}({1}) AS {2}", selectFunction.ToString(), fname, name);
             _selectionList.Add(selectionString);
         }
 

@@ -170,9 +170,15 @@ namespace Roc.SqlBuilder
 
         #region 聚合
 
-        public SqlLam<T> Count(Expression<Func<T, object>> expression, string aliasName = "")
+        public SqlLam<T> Count(Expression<Func<T, object>> expression, string aliasName = "count")
         {
             _resolver.SelectWithFunction(expression, SelectFunction.COUNT, aliasName);
+            return this;
+        }
+
+        public SqlLam<T> Count( string aliasName = "count")
+        {
+            _resolver.SelectWithFunction<T>(null, SelectFunction.COUNT, aliasName);
             return this;
         }
 

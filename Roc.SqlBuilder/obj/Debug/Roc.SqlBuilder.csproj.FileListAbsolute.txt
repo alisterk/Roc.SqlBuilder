@@ -3,3 +3,7 @@ C:\AAAAAAA\开源框架\Roc.Framework\Roc.SqlBuilder\bin\Debug\Roc.SqlBuilder.pd
 C:\AAAAAAA\开源框架\Roc.Framework\Roc.SqlBuilder\obj\Debug\Roc.SqlBuilder.dll
 C:\AAAAAAA\开源框架\Roc.Framework\Roc.SqlBuilder\obj\Debug\Roc.SqlBuilder.pdb
 C:\AAAAAAA\开源框架\Roc.Framework\Roc.SqlBuilder\obj\Debug\Roc.SqlBuilder.csprojResolveAssemblyReference.cache
+D:\WorkRoot\Open\github\Roc.SqlBuilder\Roc.SqlBuilder\bin\Debug\Roc.SqlBuilder.dll
+D:\WorkRoot\Open\github\Roc.SqlBuilder\Roc.SqlBuilder\bin\Debug\Roc.SqlBuilder.pdb
+D:\WorkRoot\Open\github\Roc.SqlBuilder\Roc.SqlBuilder\obj\Debug\Roc.SqlBuilder.dll
+D:\WorkRoot\Open\github\Roc.SqlBuilder\Roc.SqlBuilder\obj\Debug\Roc.SqlBuilder.pdb

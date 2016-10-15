@@ -22,5 +22,9 @@ namespace Roc.SqlBuilder.Adapter
         string Field(string filedName);
         string Field(string tableName, string fieldName);
         string Parameter(string parameterId);
+
+        string LikeStagement();
+
+        string LikeChars();
     }
 }

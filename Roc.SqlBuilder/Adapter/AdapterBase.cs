@@ -7,9 +7,9 @@ namespace Roc.SqlBuilder.Adapter
 {
     abstract class AdapterBase : ISqlAdapter
     {
-        private string _leftToken;
-        private string _rightToken;
-        private string _prefix;
+        internal string _leftToken;
+        internal string _rightToken;
+        internal string _prefix;
 
         public AdapterBase(string left, string right, string prefix)
         {
@@ -74,6 +74,16 @@ namespace Roc.SqlBuilder.Adapter
         public virtual string Parameter(string parameterId)
         {
             return string.Format("{0}{1}", _prefix, parameterId);
+        }
+
+        public virtual string LikeStagement()
+        {
+            return "LIKE";
+        }
+
+        public virtual string LikeChars()
+        {
+            return "%";
         }
     }
 }

@@ -22,7 +22,7 @@ namespace Roc.SqlBuilder
 
         public void AddLikeCondition(string tableName, string fieldName, string fieldValue)
         {
-            this.AddCondition(tableName, fieldName, "LIKE", fieldValue);
+            this.AddCondition(tableName, fieldName, Adapter.LikeStagement(), fieldValue);
         }
 
         public void AddCondition(bool isnull, string tableName, string fieldName)
