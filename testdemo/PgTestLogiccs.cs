@@ -11,6 +11,18 @@ namespace testdemo
 {
     public class PgTestLogic:NpgsqlBase
     {
+
+        public List<Test2> FindAction()
+        {
+            using (var db = GetConnection())
+            {
+                return db.QueryWithAction<Test2>(sql =>
+                {
+                    sql.WhereIsIn(p => p.Id, new List<object>() {1,4});
+                }).ToList();
+            }
+        }
+
         public PagedResult<Test2> FindPage(int pageSize, int pageNumber)
         {
             using (var db = GetConnection())
@@ -24,9 +36,9 @@ namespace testdemo
         {
             using (var db = GetConnection())
             {
-                return db.PagedQueryWithAction<Test2>(pageSize, pageNumber, a =>
+                return db.PagedQueryWithAction<Test2>(pageSize, pageNumber, sql =>
                 {
-                    a.Where(p => p.Id >= 1);
+                    sql.Where(p => p.Id >= 1);
                 } );
             }
         }

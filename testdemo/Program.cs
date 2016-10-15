@@ -25,7 +25,8 @@ namespace testdemo
 
             //var pglist = npglogic.FindPage(2, 1);
 
-            var pglist2 = npglogic.FindPageAction(2, 1);
+            //var pglist2 = npglogic.FindPageAction(2, 1);
+            var inlist = npglogic.FindAction();
 
             Console.ReadLine();
         }
