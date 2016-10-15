@@ -9,6 +9,7 @@ using Roc.SqlBuilder;
 
 namespace Roc.SqlBuilder.Resolver
 {
+    [Serializable]
     partial class LambdaResolver
     {
         private Dictionary<ExpressionType, string> _operationDictionary = new Dictionary<ExpressionType, string>()

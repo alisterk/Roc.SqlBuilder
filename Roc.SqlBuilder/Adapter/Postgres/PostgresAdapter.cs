@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Roc.SqlBuilder.Adapter
 {
+    [Serializable]
     class PostgresAdapter : AdapterBase
     {
         public PostgresAdapter()

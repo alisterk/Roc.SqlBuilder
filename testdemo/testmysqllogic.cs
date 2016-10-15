@@ -24,7 +24,7 @@ namespace testdemo
             }
         }
 
-        public Tuple<IEnumerable<Tbn>,int> FindPage(int pageSize, int pageNumber)
+        public PagedResult<Tbn> FindPage(int pageSize, int pageNumber)
         {
             using (var db = GetConnection())
             {

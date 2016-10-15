@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Roc.SqlBuilder
 {
+    [Serializable]
     public class SqlColumnEntity
     {
         public object Value { get; set; }

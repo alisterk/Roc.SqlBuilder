@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Roc.SqlBuilder
 {
+    [Serializable]
     internal class SqlConst
     {
         public static string[] LeftTokens = new string[] { "[", "`", "\"","" };

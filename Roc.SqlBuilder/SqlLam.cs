@@ -7,6 +7,7 @@ using Roc.SqlBuilder.Adapter;
 
 namespace Roc.SqlBuilder
 {
+    [Serializable]
     public class SqlLam<T> : SqlLamBase
     {
         public SqlLam(SqlAdapter type = SqlAdapter.SqlServer2005)
@@ -29,6 +30,21 @@ namespace Roc.SqlBuilder
             _builder = builder;
             _resolver = resolver;
         }
+
+        //public SqlLam<T> Clone()
+        //{
+        //    var lam=new SqlLam<T>(_adapter);
+
+
+        ////     internal Builder _builder;
+        ////internal LambdaResolver _resolver;
+        ////internal SqlType _type;
+        ////internal SqlAdapter _adapter;
+
+        //    lam._builder = _builder;
+        //    lam._resolver = _resolver;
+        //    lam._type = _type;
+        //}
 
         #region 修改配置
 

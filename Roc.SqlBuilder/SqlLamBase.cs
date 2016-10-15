@@ -9,6 +9,7 @@ using Roc.SqlBuilder.Adapter;
 
 namespace Roc.SqlBuilder
 {
+    [Serializable]
     public abstract class SqlLamBase
     {
         internal Builder _builder;
@@ -48,7 +49,11 @@ namespace Roc.SqlBuilder
 
         public IDictionary<string, object> Parameters
         {
-            get { return _builder.Parameters; }
+            get
+            {
+                return _builder.Parameters; 
+                
+            }
         }
 
         /// <summary>
@@ -100,5 +105,7 @@ namespace Roc.SqlBuilder
 
 
         //}
+
+       
     }
 }

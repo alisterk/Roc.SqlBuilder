@@ -59,7 +59,8 @@ namespace Dapper.Lambda
         }
 
 
-        public static Tuple<IEnumerable<T>, int> PagedQuery<T>(this IDbConnection db,int pageSize,int pageNumber, Expression<Func<T, bool>> whereExpression = null, Expression<Func<T, object>> groupByexpression=null, params Expression<Func<T, object>>[] orderbyExpressions)
+        public static PagedResult<T> PagedQuery<T>(this IDbConnection db,int pageSize,int pageNumber, Expression<Func<T, bool>> whereExpression = null, Expression<Func<T, object>> groupByexpression=null, params Expression<Func<T, object>>[] orderbyExpressions)
+            where T:class
         {
 
             var sqllam = new SqlLam<T>(db.GetAdapter());
@@ -92,11 +93,11 @@ namespace Dapper.Lambda
 
             var retlist = db.Query<T>(sqlstring, sqllam.Parameters);
 
-            return new Tuple<IEnumerable<T>, int>(retlist, countRet);
+            return new PagedResult<T>(retlist, countRet,pageSize,pageNumber);
 
         }
 
-        public static Tuple<IEnumerable<T>,int> PagedQueryWithAction<T>(this IDbConnection db, int pageSize, int pageNumber, Action<SqlLam<T>> action=null)
+        public static PagedResult<T> PagedQueryWithAction<T>(this IDbConnection db, int pageSize, int pageNumber, Action<SqlLam<T>> action=null) where T :class
         {
 
             var sqllam = new SqlLam<T>(db.GetAdapter());
@@ -107,9 +108,11 @@ namespace Dapper.Lambda
                 action(sqllam);
             }
 
+            
+
             var countSqlam = Clone(sqllam).Count();
 
-            var countRet = db.QuerySingle(countSqlam.SqlString, countSqlam.Parameters);
+            var countRet =  db.Query<int>(countSqlam.SqlString, countSqlam.Parameters).FirstOrDefault(); 
          
             //var sqlString = sqllam.SqlString;
             //var param = sqllam.Parameters;
@@ -118,11 +121,12 @@ namespace Dapper.Lambda
 
             var retlist = db.Query<T>(sqlstring, sqllam.Parameters);
 
-            return new Tuple<IEnumerable<T>, int>(retlist,countRet);
+            // return new Tuple<IEnumerable<T>, int>(retlist,countRet);
+            return new PagedResult<T>(retlist, countRet, pageSize, pageNumber);
 
         }
 
-        public static T Clone<T>(T obj)
+        public static T Clone<T>(T obj) 
 
         {
             using (Stream objectStream = new MemoryStream())

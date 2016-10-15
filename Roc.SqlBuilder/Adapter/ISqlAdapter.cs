@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Roc.SqlBuilder.Adapter
 {
+ 
     interface ISqlAdapter
     {
         //string LeftToken { get; }

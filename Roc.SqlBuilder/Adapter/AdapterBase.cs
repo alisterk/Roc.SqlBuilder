@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Roc.SqlBuilder.Adapter
 {
+    [Serializable]
     abstract class AdapterBase : ISqlAdapter
     {
         internal string _leftToken;

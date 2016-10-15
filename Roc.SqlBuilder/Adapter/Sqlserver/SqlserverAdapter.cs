@@ -5,9 +5,11 @@ using System.Text;
 
 namespace Roc.SqlBuilder.Adapter
 {
+   
     /// <summary>
     /// 支持Sqlserver 2005及以上
     /// </summary>
+    [Serializable]
     class SqlserverAdapter : AdapterBase, ISqlAdapter
     {
         public SqlserverAdapter()

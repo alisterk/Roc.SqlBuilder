@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Roc.SqlBuilder.Adapter
 {
+    [Serializable]
     class SqlAnyWhereAdapter : AdapterBase
     {
         public SqlAnyWhereAdapter()

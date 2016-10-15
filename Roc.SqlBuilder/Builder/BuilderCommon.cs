@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Roc.SqlBuilder
 {
+  
     partial class Builder
     {
         public void BeginExpression()

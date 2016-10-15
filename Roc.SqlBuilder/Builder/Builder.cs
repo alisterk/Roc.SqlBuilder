@@ -8,6 +8,7 @@ using System.Text;
 
 namespace Roc.SqlBuilder
 {
+    [Serializable]
     public partial class Builder
     {
         internal Builder(SqlType type, string tableName, ISqlAdapter adapter)
@@ -17,7 +18,7 @@ namespace Roc.SqlBuilder
             this._adapter = adapter;
             this._type = type;
             this._useField = true;
-            this._parameterDic = new ExpandoObject();
+            this._parameterDic = new Dictionary<string, object>(); //new ExpandoObject();
         }
 
         private ISqlAdapter _adapter;

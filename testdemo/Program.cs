@@ -15,15 +15,17 @@ namespace testdemo
     {
         static void Main(string[] args)
         {
-            var logic=new testmysqllogic();
+            //var logic=new testmysqllogic();
 
-            //var allList = logic.Find();
+            ////var allList = logic.Find();
 
-            var pagelist = logic.FindPage(2, 1);
+            //var pagelist = logic.FindPage(2, 1);
 
             var npglogic=new PgTestLogic();
 
-            var pglist = npglogic.FindPage(2, 1);
+            //var pglist = npglogic.FindPage(2, 1);
+
+            var pglist2 = npglogic.FindPageAction(2, 1);
 
             Console.ReadLine();
         }
